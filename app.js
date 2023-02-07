@@ -37,7 +37,8 @@ yargs.parse();
 
 function main(contact) {
     contacts.initData();
-    if (!validator.isEmail(contact.email)) {
+    // check if email is empty && invalid
+    if (contact.email && !validator.isEmail(contact.email)) {
         console.log('Email is not valid');
         return;
     }
